@@ -1,22 +1,172 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Memoria - Personal Portfolio</title>
+
     <meta charset="UTF-8">
+    <meta name="description" content="Personal portfolio of Memoria">
+    <meta name="keywords" content="HTML, CSS, Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSL WebSocket Test Client</title>
+
+    <link rel="icon" type="image/png" href="../images/x.png">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 0 20px;
+            background-image: url("../images/wt.png");
+            background-attachment: fixed;
+            background-size: auto;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        #status {
+
+        * {
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+       
+
+        .navbar {
+            overflow: hidden;
+            background-color: aliceblue;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        .navdiv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo a {
+            font-size: 50px;
+            font-weight: 600;
+            color: rgb(59, 78, 129);
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li a {
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+
+        
+
+        main {
+            padding-bottom: 50px;
+        }
+
+        .title {
+            text-align: center;
+            color: aliceblue;
+            font-size: 50px;
+        }
+
+        .para {
+            font-size: 20px;
+            color: aliceblue;
+            text-align: center;
+            margin-right: 150px;
+            margin-left: 150px;
+        }
+
+      
+
+        .section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(240, 248, 255, 0.95);
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            color: rgb(59, 78, 129);
+            font-size: 30px;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section li {
+            display: list-item;
+            list-style-type: disc;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .project {
+            margin-bottom: 25px;
+        }
+
+        .project h3 {
+            color: rgb(59, 78, 129);
+        }
+
+        .social img {
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            color: aliceblue;
+            padding: 20px;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+
+            padding: 12px 18px;
+
+            background-color: rgb(59, 78, 129);
+              color: white;
+
+            border-radius: 8px;
+            font-weight: bold;
+            }
+           .video-container video {
+            width: 640px;
+              height: 360px;
+              
+           }
+            .visitorcount{
+            position: fixed;
+            top: 90px;
+            right: 20px;
+
+            padding: 12px 18px;
+
+            background-color: rgb(59, 78, 129);
+              color: white;
+
+            border-radius: 8px;
+            font-weight: bold;
+            }
+             #status {
             font-weight: bold;
             padding: 10px;
             border-radius: 4px;
             margin-bottom: 15px;
             background-color: #f0f0f0;
+        }
+        .testing{
+            color: aliceblue;
         }
         #controls {
             display: flex;
@@ -42,11 +192,194 @@
         .sent { color: #0066cc; }
         .received { color: #008800; }
         .system { color: #888888; font-style: italic; }
+
     </style>
+   
 </head>
+
+
 <body>
 
-    <h2>BSL WebSocket Client</h2>
+    <nav class="navbar">
+
+        <div class="navdiv">
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../images/x.png"
+                         alt="Memoria"
+                         width="75px"
+                         height="60px">
+                </a>
+            </div>
+            <div class="visitorcount">Visitors online: <span id="visitorCount">0</span></p> </div>
+
+            <ul>
+                <li>
+                    <a href="#profile">Profile</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    
+    <main id="top">
+
+       
+        <h1 class="title">
+            Hello, I'm xMemoria
+        </h1>
+
+        <p class="para">
+            IT Network System Student 
+        </p>
+
+
+        
+        <section class="section" id="profile">
+
+            <h2>Profile</h2>
+            <div class=poto> <img src="../images/stoopid.png"
+                         alt="suffer"
+                         width="100px"
+                         height="90px">
+                        
+            </div>
+
+            <p>
+                I am xMemoria
+            </p>
+
+            <p>
+                Personal Portfolio Site for showcasing projects
+            </p>
+            
+
+        </section>
+
+
+       
+        <section class="section" id="skills">
+
+            <h2>Skills & Technologies</h2>
+
+            <ul>
+                <li>Gaming
+                <div class="video-container">
+                <video controls>
+                 <source src="../video/lmao.mp4" type="video/mp4">
+                
+                </video>
+                </div>
+                </li>
+                <li>Rust</li>
+                <li>Java</li>
+                <li>Computer Networking</li>
+            </ul>
+
+        </section>
+
+
+       
+        <section class="section" id="projects">
+
+            <h2>Projects & Achievements</h2>
+
+            <div class="project">
+
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    A personal portfolio website created using
+                    HTML and CSS to showcase my skills, projects,
+                    and interests.
+                </p>
+
+            </div>
+
+            <div class="project">
+
+                <h3>Other Projects</h3>
+
+                <p>
+                    WIP discord bot project Named Rinne written in Rust 
+                </p>
+
+            </div>
+
+        </section>
+
+       <section class="section" id="coin">
+        <h2>Test Ur Luck</h2>
+        <p>Result: <strong id="coinResult">-</strong></p>
+        <div style="margin: 15px 0;">
+        <img id="coinImage" src="" alt="Coin" style="width: 120px; display: none;" />
+        </div>
+        <button id="flipBtn">Flip the coin</button>
+        </section>
+
+
+    
+        <section class="section" id="contact">
+
+            <h2>Contact & Social Links</h2>
+
+            <p>
+                Email:
+                markeemandalaza@gmail.com
+            </p>
+
+            <div class="social">
+
+                <a href="https://github.com/NightxMemoria" target="_blank">
+                    <img src="../images/gethub.png"
+                         alt="GitHub"
+                         width="50px"
+                         height="50px">
+                </a>
+
+                <a href="https://www.youtube.com/@emzi7763" target="_blank">
+                    <img src="../images/yt.png"
+                         alt="YouTube"
+                         width="50px"
+                         height="50px">
+                </a>
+
+                <a href="https://www.facebook.com/Markz502" target="_blank">
+                    <img src="../images/fb.png"
+                         alt="Facebook"
+                         width="50px"
+                         height="50px">
+                </a>
+
+                <a href="https://osu.ppy.sh/users/14064323" target="_blank">
+                    <img src="../images/osu.png"
+                         alt="osu!"
+                         width="50px"
+                         height="50px">
+                </a>
+
+            </div>
+
+        </section>
+        
+      <section class="testing">
+        <h2>BSL WebSocket Client</h2>
+        <h3>still here to test if the backend is running</h3>
     <div id="status">Status: Connecting...</div>
 
     <div id="controls">
@@ -55,66 +388,134 @@
     </div>
 
     <div id="log"></div>
+        <a href="#top" class="back-to-top">↑ Top</a>
+    </section>
+    </main>
+    
 
-    <script>
-        const wsUrl = "ws://localhost:8000";
-        const socket = new WebSocket(wsUrl);
 
-        const statusDiv = document.getElementById("status");
-        const logDiv = document.getElementById("log");
-        const msgInput = document.getElementById("msgInput");
-        const sendBtn = document.getElementById("sendBtn");
+    <footer>
+        <p>
+            © 2026 xMemoria
+        </p>
+    </footer>
+    
 
-        function appendLog(text, className) {
-            const entry = document.createElement("div");
-            entry.className = className;
-            entry.textContent = text;
-            logDiv.appendChild(entry);
-            logDiv.scrollTop = logDiv.scrollHeight;
-        }
+</body>
+<script>
+    const wsUrl = "ws://localhost:8000";
+    const socket = new WebSocket(wsUrl);
 
-        socket.onopen = function() {
+   
+    const statusDiv = document.getElementById("status");
+    const logDiv = document.getElementById("log");
+    const msgInput = document.getElementById("msgInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+   
+    const visitorCount = document.getElementById("visitorCount");
+    const coinResult = document.getElementById("coinResult");
+    const coinImg = document.getElementById("coinImage");
+    const flipBtn = document.getElementById("flipBtn");
+
+    function appendLog(text, className) {
+        if (!logDiv) return;
+        const entry = document.createElement("div");
+        entry.className = className;
+        entry.textContent = text;
+        logDiv.appendChild(entry);
+        logDiv.scrollTop = logDiv.scrollHeight;
+    }
+
+   
+    socket.onopen = function () {
+        if (statusDiv) {
             statusDiv.textContent = "Status: Connected to " + wsUrl;
             statusDiv.style.backgroundColor = "#d4edda";
             statusDiv.style.color = "#155724";
-            msgInput.disabled = false;
-            sendBtn.disabled = false;
-            appendLog("[System] Handshake complete. WebSocket ready.", "system");
-        };
+        }
+        if (msgInput) msgInput.disabled = false;
+        if (sendBtn) sendBtn.disabled = false;
+        appendLog("[System] Handshake complete. WebSocket ready.", "system");
+    };
 
-        socket.onmessage = function(event) {
-            appendLog("[Server] " + event.data, "received");
-        };
+   
+    socket.onmessage = function (event) {
+        const data = event.data;
 
-        socket.onclose = function(event) {
+        if (data.startsWith("visitors:")) {
+            if (visitorCount) visitorCount.textContent = data.slice(9);
+        } 
+        else if (data.startsWith("coin:")) {
+            const side = data.slice(5);
+            if (coinResult) coinResult.textContent = side;
+
+            if (coinImg) {
+                
+                coinImg.style.opacity = "0.3";
+                setTimeout(function () {
+                    if (side === "Heads") {
+                        coinImg.src = "../images/heads.png";
+                    } else if (side === "Tails") {
+                        coinImg.src = "../images/tails.png";
+                    }
+                    coinImg.style.opacity = "1";
+                    coinImg.style.display = "block";
+                }, 100);
+            }
+        } 
+        else {
+           
+            appendLog("[Server] " + data, "received");
+        }
+    };
+
+    
+    socket.onclose = function (event) {
+        if (statusDiv) {
             statusDiv.textContent = "Status: Disconnected";
             statusDiv.style.backgroundColor = "#f8d7da";
             statusDiv.style.color = "#721c24";
-            msgInput.disabled = true;
-            sendBtn.disabled = true;
-            appendLog("[System] Connection closed by server.", "system");
-        };
-
-        socket.onerror = function(error) {
-            appendLog("[Error] WebSocket error occurred.", "system");
-        };
-
-        function sendMessage() {
-            const text = msgInput.value.trim();
-            if (text.length > 0 && socket.readyState === WebSocket.OPEN) {
-                socket.send(text);
-                appendLog("[Client] " + text, "sent");
-                msgInput.value = "";
-            }
         }
+        if (msgInput) msgInput.disabled = true;
+        if (sendBtn) sendBtn.disabled = true;
+        appendLog("[System] Connection closed by server.", "system");
+    };
 
-        sendBtn.addEventListener("click", sendMessage);
-        msgInput.addEventListener("keypress", function(e) {
+   
+    socket.onerror = function (error) {
+        appendLog("[Error] WebSocket error occurred.", "system");
+    };
+
+    
+    function sendMessage() {
+        const text = msgInput.value.trim();
+        if (text.length > 0 && socket.readyState === WebSocket.OPEN) {
+            socket.send(text);
+            appendLog("[Client] " + text, "sent");
+            msgInput.value = "";
+        }
+    }
+
+    if (sendBtn) sendBtn.addEventListener("click", sendMessage);
+    if (msgInput) {
+        msgInput.addEventListener("keypress", function (e) {
             if (e.key === "Enter") {
                 sendMessage();
             }
         });
-    </script>
+    }
 
-</body>
+    
+    if (flipBtn) {
+        flipBtn.addEventListener("click", function () {
+            if (socket.readyState === WebSocket.OPEN) {
+                const side = Math.random() < 0.5 ? "Heads" : "Tails";
+                socket.send("coin:" + side);
+            }
+        });
+    }
+</script>
+
 </html>
+
