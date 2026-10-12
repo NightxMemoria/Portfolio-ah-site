@@ -5,15 +5,19 @@ var server = http(8000);
 // ==========================================
 // HTTP EVENT HANDLERS
 // ==========================================
-server.get = function (path, data){
-   //print("get loc:" + path + "data:"+ data);
-   print("get loc:" + path );
-   if(path == "/"){
-     server.sendFile("public/index.html");
-   }
-   else{
-   server.sendFile("public/404.html");
-   }
+server.get = function (path, data) {
+    print("get loc:" + path);
+
+    if (path == "/") {
+        server.sendFile("public/index.html");
+    } else if (path == "../images/heads.png") {
+        server.sendFile("images/heads.png");
+    } else if (path == "../images/tails.png") {
+        server.sendFile("images/tails.png");
+    } else {
+        server.sendFile("public/404.html");
+    }
+
 };
 
 // ==========================================
@@ -27,19 +31,34 @@ server.onConnect = function (clientId) {
    // Send a welcome message to this specific client
    server.send(clientId, "Welcome toWebSocket server!");
 };
-
+var visitors = 0;
+server.onConnect = function (clientId) {
+   visitors = visitors + 1;
+   server.sendAll("visitors:" + visitors);
+};
 // Triggered when a client sends a message
 server.onData = function (message, clientId) {
    print("Received from Client " + clientId + ": " + message);
-   // Echo the message back to the sender
-   //server.send(clientId, "Echo: " + message);
-   //server.send(clientId, message);
-   // Or broadcast it to everyone connected
-   server.sendAll("User " + clientId + " says: " + message);
+
+   if(message == "ping"){
+      server.send(clientId, "pong from BSL");
+   }
+   else if(message == "whoami"){
+      server.send(clientId, "You are client " + clientId);
+   }
+  else if (message == "coin:Heads" || message == "coin:Tails") {
+        server.sendAll(message);
+   }
+else { server.sendAll("User " + clientId + " says: " + message);
+    }
 };
+
+
 
 // Triggered when a client disconnects
 server.onDisconnect = function (clientId) {
+     visitors = visitors - 1;
+   server.sendAll("visitors:" + visitors);
    print("WebSocket disconnected! Client ID: " + clientId);
 };
 
