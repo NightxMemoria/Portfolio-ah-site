@@ -22,4 +22,4 @@ bzg run
 it should show( [bzg run] Starting 'start': bonezegei app.bzg ) in the terminal
 ### SKREEN SHOT
 ![terminal proof](images/terminal.png)
-![sample](images/samplesite.png)
+![sample](images/sampelsite.png)
